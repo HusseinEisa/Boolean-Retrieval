@@ -1,0 +1,59 @@
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static "Images/Icon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "Styles/Search_Style.css" %}">
+    <title>Search Engine</title>
+</head>
+<body>
+    
+    <div class="Title">
+        <img src="{% static "Images/Icon.ico" %}" alt="">   
+        <span>Summit Lovers</span>
+    </div>
+    
+    <br>
+    
+    <div class="Search">
+        <form class="Search" method="GET" action="{% url 'Result' %}">
+            <input class="Input" name="Query" type="search" placeholder="Enter the Boolean query" />
+            <input class="Button" type="submit" value="Search" />
+        </form>
+    </div>
+    
+    {% if Query != 0 %}
+        
+        <link rel="stylesheet" href="{% static "Styles/Result_Style.css" %}">
+        
+        <section class="Result">
+                
+            {% if Rank == 0 %}
+                <h1 class="Found_Result">Sorry, There is no results founded for query "{{Search}}"</h1>
+            {% endif %}
+            
+            {% if Rank > 0 %}
+                <h1 class="Found_Result">There are {{Rank}} results founded for query "{{Search}}"</h1>
+                <div class="Decument_Result">Founded at: 
+                    {% for Term in DN %}
+                        <span class="Decuments">Document{{Term}}</span>,
+                    {% endfor %}
+                </div>
+                
+                <br>
+                
+                <div class="Statement_Result">
+                    {% for Term in DT %}
+                        {{Term}}<br><hr>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+        </section>
+    {% endif %}
+    
+</body>
+</html>

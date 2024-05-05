@@ -1,0 +1,67 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 200px;
+    height: 100%;
+    width: 100%;
+    background-color: cadetblue;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+
+.Title {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+
+.Title img {
+    height: 80px;
+    width: 80px;
+    border: none;
+}
+
+.Title span {
+    font-size: 40px;
+}
+
+.Search {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.Search form .Input {
+    height: 35px;
+    width: 350px;
+    border: 1px black solid;
+    border-radius: 5px;
+    background-color: rgb(222, 253, 253);
+    font-size: 15px;
+    text-align: center;
+    color: black;
+}
+
+.Search form .Button {
+    height: 35px;
+    width: 70px;
+    border: 1px black solid;
+    border-radius: 5px;
+    background-color: rgb(97, 97, 214);
+    font-size: 15px;
+    text-align: center;
+    color: black;
+}
+
+.Search form .Button:hover {
+    border-color: rgb(97, 97, 214);
+    background-color: black;
+    color: rgb(97, 97, 214);
+}
